@@ -79,7 +79,7 @@ Something like the following:
 (data Point (x: Int y: Int x: Int)) ; struct-style definition
 (data Maybe a ((Just a) (Nothing))) ; enum/ADT-style definition
 ```
-It would be fun to allow some kind of special form for enums that is a little bit less like s-expression hell; something like:
+It would be fun to allow some kind of special form for ADTs that is a little bit less like s-expression hell; something like:
 
 ```lisp
 (data Maybe a (Just a | Nothing))
