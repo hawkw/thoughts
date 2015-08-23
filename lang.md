@@ -55,6 +55,11 @@ def fac (n: Int) ; this looks _almost_ like Python!
               + this kind of binds us to including dependencies as source and compiling everything together
               + a là Cargo
               + if the compiler is Reasonably Fast, I think this is a _much_ better system anyway
+  + typeclasses
+    + honestly like, one of the greatest Haskell inventions
+    + Rust's `trait` system is a good version of typeclasses for regular people
+    + typeclasses are nice since a lot of their overhead can be resolved at compile time
+    + why would you not want this?
   + lists
       + it would be nice if these could be wholly stack-allocated
           + otherwise we'd need to write some kind of ref-counting pointer, and that would take work
