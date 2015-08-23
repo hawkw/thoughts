@@ -57,7 +57,7 @@ def fac (n: Int) ; this looks _almost_ like Python!
               + if the compiler is Reasonably Fast, I think this is a _much_ better system anyway
   + typeclasses
     + honestly like, one of the greatest Haskell inventions
-    + Rust's `trait` system is a good version of typeclasses for regular people
+    + Rust's `trait` system is a good version of typeclasses for regular people (the keyword `trait` seems like a good way to not confuse OO people...)
     + typeclasses are nice since a lot of their overhead can be resolved at compile time
     + why would you not want this?
   + lists
