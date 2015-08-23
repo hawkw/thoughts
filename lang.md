@@ -69,3 +69,22 @@ def fac (n: Int) ; this looks _almost_ like Python!
       + possibly allow some kind of desugaring of S-expressions into constructs that aren't `CONS` lists?
           + for performance reasons
           + this might involve Hard Compiler Analysis (i.e. how can we reasonably prove that Whatever Purpose This Thing Is Used For would be better served as a vector/array/cons list?)
+
+
+Possibly ADTs and structs can be introduced with the same syntax (Haskell-style).
+
+Something like the following:
+
+```lisp
+(data Point (x: Int y: Int x: Int)) ; struct-style definition
+(data Maybe a ((Just a) (Nothing))) ; enum/ADT-style definition
+```
+It would be fun to allow some kind of special form for enums that is a little bit less like s-expression hell; something like:
+
+```lisp
+(data Maybe a (Just a | Nothing))
+; or, in i-expr form
+data 
+  Maybe a
+    Just a | Nothing
+```
