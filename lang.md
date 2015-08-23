@@ -7,6 +7,10 @@ Rough thoughts and ideas on the language I want to write for my senior thesis.
      + this doesn't have to be implemented for my comp, but it would be nice to provide eventually. It might make the syntax more friendly to systems programmers with experience in non-LISP languages.
      + parsing this should not be all that much harder than S-expressions.
  + Types/type syntax
+     + type annotations of the `variable: Type` or `variable : Type` form
+       + a là Scala/ML/Rust/etc
+       + this is easier to parse than Java/C style
+       + and just seems Morally Correct
      + S-expressions for lists, obviously (`(a b c)` and `(a . (b . c)) forms`)
      + square braces?
          + I like how Scheme allows matching square braces to be substituted for matching perens, this makes large nested constructs much more readable
