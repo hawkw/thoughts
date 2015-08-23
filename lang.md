@@ -35,7 +35,7 @@ Lisp-style:
 ```
 I-expression style with curly infix notation:
 ```lisp
-def fac (n: Int)
+def fac (n: Int) ; this looks _almost_ like Python!
   if {n = 1} 
     1
     {n * fac {n - 1}}
