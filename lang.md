@@ -4,6 +4,7 @@ Rough thoughts and ideas on the language I want to write for my senior thesis.
 
  + Possibly allow some kind of off-side rule syntax (not everyone likes S-expressions)
      + look into [Scheme RFI 49](http://srfi.schemers.org/srfi-49/srfi-49.html)'s "I-expressions"
+     + and [T-expressions](http://srfi.schemers.org/srfi-110/srfi-110.html)
      + this doesn't have to be implemented for my comp, but it would be nice to provide eventually. It might make the syntax more friendly to systems programmers with experience in non-LISP languages.
      + parsing this should not be all that much harder than S-expressions.
  + Types/type syntax
@@ -20,7 +21,25 @@ Rough thoughts and ideas on the language I want to write for my senior thesis.
          + Once again, a systems language will likely need some kind of struct syntax for talking to C libraries, so curlies will probably be used for this.
          + It would be nice if these could compile directly to C structs.
          + Possibly steal ideas from Clojure's dict syntax?
+         + T-expression style curly-infix is nice, though.
 
+Example code snippets:
+
+Lisp-style:
+```lisp
+(def fac (n: Int)
+  (if (= n 1) 1
+    (* n (fac (- n 1)))
+  )
+)
+```
+I-expression style with curly infix notation:
+```lisp
+def fac (n: Int)
+  if {n = 1} 
+    1
+    {n * fac {n - 1}}
+```
 ### Types
 
   + ADTs
