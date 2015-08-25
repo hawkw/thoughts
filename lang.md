@@ -88,3 +88,32 @@ data
   Maybe a
     Just a | Nothing
 ```
+
+### Code generation
+
+Potential targets:
+ + LLVM
+    - pros:
+      * LLVM is ultra-portable
+      * well-supported
+      * powerful optimizations
+    - cons:
+      * requires C++ FFI
+    - can just `use rustc::lib::llvm;`
+      * piggyback on already written rustc LLVM wrappers for C bindings
+      * open-source
+      * see [iron-kaleidoscope](https://github.com/jauhien/iron-kaleidoscope#llvm-ir-code-generation) for this
+    
+ + generated C code
+    - a la [Nim](http://nim-lang.org/)
+    - pros:
+      * portability
+      * benefit from C compiler optimisations
+      * compiler can insert calls to `malloc()`/`free()`
+      * easy to link against C libraries
+    - cons:
+      * in order for the compiler to write good C code, I would have to write _excellent_ C code.
+      * making the programmer invoke two separate compilers seems like it might be a productivity issue
+         + though the compiler driver could seek out and call the appropriate C compiler
+      * this seems like a number of layers of indirection.
+    
